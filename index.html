@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Project tracking intro component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Barlow', sans-serif;
+      font-size: 18px;
+      box-sizing: border-box;
+    }
+
+    /* navbar */
+    .navbar{
+      padding: 70px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: auto;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar ul.menu{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .navbar ul.menu li{
+      display: inline-block;
+    }
+    .navbar ul.menu li a{
+      margin: 0 20px;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: hsl(230, 29%, 20%);
+      text-transform: uppercase;
+    }
+    .navbar ul.menu li a.login{
+      color: hsl(231, 7%, 65%);
+    }
+    .navbar ul.menu li a:hover{
+      text-decoration: underline;
+    }
+    .navbar img.close{
+      display: none;
+    }
+    .navbar img.hamburger{
+      display: none;
+    }
+
+    /* main */
+    main .container{
+      padding: 30px 0 70px 70px;
+      display: grid;
+      grid-template-columns: 500px auto;
+      grid-template-rows: auto;
+      grid-template-areas: "main side";
+      column-gap: 10px;
+      align-items: center;
+    }
+    main .container .main{
+      grid-area: main;
+    }
+    main .container .main .title{
+      display: grid;
+      grid-template-columns: 60px auto;
+      grid-template-rows: auto;
+      column-gap: 20px;
+    }
+    main .container .main .title p.new{
+      margin: 0;
+      border-radius: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: hsl(0, 0%, 100%);
+      text-align: center;
+      text-transform: uppercase;
+      background-color: hsl(230, 29%, 20%);
+    }
+    main .container .main .title p.mono{
+      margin: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      color: hsl(230, 11%, 40%);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    main .container .main h1.header{
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    main .container .main p.desc{
+      width: 290px;
+      color: hsl(230, 11%, 40%);
+    }
+    main .container .main .promo{
+      padding-top: 30px;
+      display: grid;
+      grid-template-columns: 180px auto;
+      grid-template-rows: auto;
+      column-gap: 20px;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    main .container .main .promo a.schedule{
+      margin: 0;
+      padding: 10px;
+      background-color: hsl(0, 100%, 68%);
+      border-radius: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: hsl(0, 0%, 100%);
+      text-align: center;
+      text-decoration: none;
+    }
+    main .container .main .promo p.promo-desc{
+      margin: 0;
+      color: hsl(230, 11%, 40%);
+      letter-spacing: 3px;
+    }
+    main .container .side{
+      grid-area: side;
+      overflow: hidden;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 375px) {
+      /* navbar */
+      .navbar{
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: auto;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar ul.menu{
+        display: none;
+        margin: 0;
+        padding: 0 105px;
+        list-style: none;
+        text-align: center;
+        background-color: hsl(0, 0%, 100%);
+        position: absolute;
+        top: 80px;
+        left: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+      }
+      .navbar ul.menu li{
+        display: block;
+        margin: 20px 0;
+      }
+      .navbar ul.menu li a{
+        text-decoration: none;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        color: hsl(230, 29%, 20%);
+        text-transform: uppercase;
+      }
+      .navbar img.close{
+        display: none;
+      }
+      .navbar img.hamburger{
+        display: block;
+      }
+
+      /* main */
+      main .container{
+        padding: 30px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 350px;
+        grid-template-areas: 
+          "side"
+          "main";
+        row-gap: 100px;
+        justify-items: center;
+      }
+      main .container .main{
+        grid-area: main;
+      }
+      main .container .main h1.header{
+        margin: 20px 0;
+        font-size: 40px;
+      }
+      main .container .main .promo{
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: 150px auto;
+        grid-template-rows: auto;
+        column-gap: 8px;
+        align-items: center;
+        text-transform: uppercase;
+      }
+      main .container .main .promo p.promo-desc{
+        margin: 0;
+        font-size: 12px;
+        color: hsl(230, 11%, 40%);
+        letter-spacing: 1px;
+      }
+      main .container .side{
+        grid-area: side;
+        overflow: hidden;
+      }
+      main .container .side img{
+        width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <img class="logo" src="images/logo.svg" alt="logo">
+      <ul class="menu">
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a class="login" href="#">Login</a></li>
+      </ul>
+      <img onclick="menuOpen()" class="hamburger" src="images/icon-hamburger.svg" alt="icon-hamburger">
+      <img onclick="menuClose()" class="close" src="images/icon-close.svg" alt="icon-close">
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="main">
+        <div class="title">
+          <p class="new">New</p>
+          <p class="mono">Monograph Dashboard</p>
+        </div>
+        <h1 class="header">Powerful insights into your team</h1>
+        <p class="desc">Project planning and time tracking for agile teams</p>
+        <div class="promo">
+          <a href="#" class="schedule">Schedule a demo</a>
+          <p class="promo-desc">to see a live preview</p>
+        </div>
+      </div>
+      <div class="side">
+        <img src="images/illustration-devices.svg" alt="illustration-devices">
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Abdullah Al-Karim</a>.
+    </p>
+  </footer>
+
+  <script>
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+    const close = document.querySelector('.close');
+
+    function menuOpen() {
+      menu.style.display='block';
+      close.style.display='block';
+      hamburger.style.display='none';
+    }
+
+    function menuClose() {
+      menu.style.display='none';
+      close.style.display='none';
+      hamburger.style.display='block';
+    }
+  </script>
+</body>
+</html>
